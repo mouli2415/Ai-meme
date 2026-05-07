@@ -2,5 +2,5 @@ flask==3.0.3
 flask-cors==4.0.1
 transformers==4.40.1
 torch
-Pillow==10.3.0
+Pillow
 accelerate==0.30.0
