@@ -13,7 +13,7 @@
 "use strict";
 
 // ── Config ────────────────────────────────────────────────────────────────────
-const API_URL = "http://localhost:5000/generate";
+const API_URL = "https://ai-meme.onrender.com/generate";
 
 // ── DOM elements ──────────────────────────────────────────────────────────────
 const topicInput     = document.getElementById("topicInput");
