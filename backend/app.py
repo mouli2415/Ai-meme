@@ -27,6 +27,9 @@ from model import generate_caption
 
 # ── App setup ─────────────────────────────────────────────────────────────────
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return "AI Meme Generator Backend Running!"
 CORS(app)  # Allow the HTML frontend (opened as file://) to call this server
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
