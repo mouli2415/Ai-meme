@@ -205,7 +205,7 @@ def generate():
 
     return jsonify({
         "caption":   caption,
-        "image_url": f"http://localhost:5000/output/{filename}?t={datetime.now().timestamp()}",
+        "image_url": f"https://ai-meme.onrender.com/output/{filename}?t={datetime.now().timestamp()}",
     }), 200
 
 
