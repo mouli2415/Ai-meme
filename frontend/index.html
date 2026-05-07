@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Meme Generator 🧠</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+
+  <main class="card">
+
+    <!-- Header -->
+    <header class="card__header">
+      <div class="logo-badge">🧠</div>
+      <h1 class="card__title">AI Meme Generator</h1>
+      <p class="card__subtitle">
+        Type any topic → Local GPT-2 writes the caption → Instant meme ✨
+      </p>
+    </header>
+
+    <!-- Input -->
+    <section class="input-section">
+      <div class="input-wrapper">
+        <span class="input-icon" aria-hidden="true">💬</span>
+        <input
+          id="topicInput"
+          class="topic-input"
+          type="text"
+          placeholder="e.g. exam stress, Monday morning, pizza cravings…"
+          maxlength="80"
+          autocomplete="off"
+          aria-label="Enter a meme topic"
+        />
+      </div>
+      <button id="generateBtn" class="generate-btn" onclick="handleGenerate()">
+        <span class="btn-label">Generate Meme</span>
+        <span class="btn-icon" aria-hidden="true">🚀</span>
+      </button>
+    </section>
+
+    <!-- Error -->
+    <div id="errorBox" class="error-box hidden" role="alert">
+      <span class="error-icon">⚠️</span>
+      <span id="errorText"></span>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingSection" class="loading-section hidden">
+      <div class="spinner-ring">
+        <div class="spinner-inner"></div>
+      </div>
+      <p class="loading-text">GPT-2 is thinking of something hilarious…</p>
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <section id="resultSection" class="result-section hidden">
+
+      <div class="caption-box">
+        <span class="caption-label">✍️ Generated Caption</span>
+        <p id="captionText" class="caption-text"></p>
+      </div>
+
+      <div class="meme-frame">
+        <img id="memeImage" class="meme-image" src="" alt="Generated meme" />
+      </div>
+
+      <div class="action-row">
+        <a id="downloadBtn" class="download-btn" href="#" download="ai-meme.jpg">
+          ⬇ Download Meme
+        </a>
+        <button class="try-again-btn" onclick="resetUI()">
+          🔄 Try Another
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    Powered by <strong>distilgpt2</strong> · 100% local · No API keys needed
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
